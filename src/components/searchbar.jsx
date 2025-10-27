@@ -17,7 +17,7 @@ const SearchBar = () => {
       id="search_word"
       type="text"
       placeholder="Find a movie..."
-      className="bg-gray-800 rounded-full p-5 w-full max-w-3xl text-1xl"
+      className="bg-gray-300 dark:bg-gray-800 rounded-full p-5 w-full max-w-3xl text-1xl text-black dark:text-white"
       defaultValue={search}
       onChange={onChange}
     />
