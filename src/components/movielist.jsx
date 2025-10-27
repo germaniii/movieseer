@@ -3,10 +3,8 @@ import Pagination from "./pagination";
 import Poster from "./poster";
 import searchAction from "@/actions/search";
 
-const MovieList = async ({ search }) => {
-  const page = search?.page ?? 1;
-  const searchWord = search?.search ?? "";
-  const result = await searchAction(page, searchWord);
+const MovieList = async ({ page, search }) => {
+  const result = await searchAction(page, search);
   return (
     <>
       {result?.results?.length > 0 ? (

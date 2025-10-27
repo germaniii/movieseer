@@ -6,6 +6,8 @@ import { Suspense } from "react";
 
 export default async function Home({ searchParams }) {
   const search = await searchParams;
+  const page = search?.page ?? 1;
+  const searchWord = search?.search ?? "";
   return (
     <div className="flex justify-center">
       <main className="bg-white dark:bg-black min-h-screen w-full max-w-7xl flex flex-col items-center py-10 px-5">
@@ -16,8 +18,8 @@ export default async function Home({ searchParams }) {
           <SearchBar />
         </div>
         <div className="w-full">
-          <Suspense fallback={<LoadingSkel />}>
-            <MovieList search={search} />
+          <Suspense key={searchWord} fallback={<LoadingSkel />}>
+            <MovieList page={page} search={searchWord} />
           </Suspense>
         </div>
       </main>
