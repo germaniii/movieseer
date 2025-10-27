@@ -26,7 +26,7 @@ const Poster = ({ details }) => {
       <div className="absolute bottom-0 p-4 w-full text-left">
         <h3 className="text-xl font-bold">{title}</h3>
         <p className="text-sm opacity-80">{releaseDate}</p>
-        <p className="hidden group-hover:block transform transition-all text-ellipsis overflow-scroll max-h-50">
+        <p className="hidden group-hover:block transform transition-all text-ellipsis overflow-y-scroll max-h-50 custom-scrollbar">
           {overview}
         </p>
       </div>
