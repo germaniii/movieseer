@@ -1,4 +1,4 @@
-"no-cache";
+import Link from "next/link";
 import Pagination from "./pagination";
 import Poster from "./poster";
 import searchAction from "@/actions/search";
@@ -28,7 +28,16 @@ const MovieList = async ({ search }) => {
           <Pagination />
         </>
       ) : (
-        <p className="w-full text-center">No matches</p>
+        <>
+          <p className="w-full text-center">
+            No matches.{" "}
+            <Link href="?page=1&search=">
+              <span className="w-full text-center text-blue-600 hover:text-blue-300">
+                Click here to go back to the homepage.
+              </span>
+            </Link>
+          </p>
+        </>
       )}
     </>
   );
